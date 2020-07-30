@@ -1,0 +1,21 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+
+  // set variable taskVar.excelAddinsPath and taskVar.vbacPath in settings.json.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "export to .xlam in Addins folder",
+      "type": "shell",
+      "command": "cscript //nologo ${config:taskVar.vbacPath} combine /binary:${workspaceFolder}/bin /source:${workspaceFolder}/src;Copy-Item -Path bin/LittleToolVba.xlam -Destination ${config:taskVar.excelAddinsPath} -Force;Get-ChildItem ${config:taskVar.excelAddinsPath}",
+      "problemMatcher": []
+    },
+    {
+      "label": "import from .xlam in Addins folder",
+      "type": "shell",
+      "command": "Copy-Item -Path ${config:taskVar.excelAddinsPath}/LittleToolVba.xlam -Destination bin -Force;cscript //nologo ${config:taskVar.vbacPath} decombine /binary:${workspaceFolder}/bin /source:${workspaceFolder}/src",
+      "problemMatcher": []
+    }
+  ]
+}

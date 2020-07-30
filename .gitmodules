@@ -1,0 +1,3 @@
+[submodule "submodules/ariawase"]
+	path = submodules/ariawase
+	url = https://github.com/vbaidiot/ariawase.git

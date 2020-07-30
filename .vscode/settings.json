@@ -1,0 +1,7 @@
+{
+  "taskVar": {
+    "$desc": "variables for tasks.json",
+    "vbacPath": "submodules\\ariawase\\vbac.wsf",
+    "excelAddinsPath": "${env:APPDATA}\\Microsoft\\AddIns"
+  }
+}
